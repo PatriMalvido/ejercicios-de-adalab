@@ -1,0 +1,14 @@
+span,
+p {
+  background-color: mediumpurple;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+}
+
+.inline-block {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+}
