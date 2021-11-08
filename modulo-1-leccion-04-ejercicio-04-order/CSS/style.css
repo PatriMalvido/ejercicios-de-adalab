@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  border: 2px solid purple;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.article {
+  box-sizing: border-box;
+  background-color: seagreen;
+  border: 1px solid red;
+  width: 300px;
+  display: flex;
+  flex-flow: column wrap;
+}
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: left;
+}
+.article-5 {
+  width: 600px;
+}
+.title {
+  text-align: left;
+}
+.article-1,
+.article-2,
+.article-3,
+.article-4 {
+  order: 1;
+}
