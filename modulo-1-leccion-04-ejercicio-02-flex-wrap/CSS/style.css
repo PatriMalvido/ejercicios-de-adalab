@@ -1,0 +1,12 @@
+.container {
+  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.image {
+  background-color: plum;
+  width: 200px;
+  height: 100px;
+  border-style: solid;
+}

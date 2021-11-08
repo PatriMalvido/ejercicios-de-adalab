@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  background-color: palegreen;
+  width: 500px;
+  height: 500px;
+  /*Para distribución horizontal, el eje principal es el horizontal*/
+  flex-direction: row;
+
+  /*para distribucion en vertical, el eje principal es el vertical
+  flex-direction: column;*/
+}
+
+.item {
+  background-color: powderblue;
+  box-sizing: border-box;
+  border-style: solid;
+}
