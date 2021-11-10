@@ -1,0 +1,30 @@
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+.header {
+  background-color: red;
+}
+.main {
+  background-color: royalblue;
+  text-align: center;
+  flex: 50%;
+}
+
+.aside-1 {
+  background-color: yellow;
+}
+.aside-2 {
+  background-color: pink;
+}
+.footer {
+  background-color: green;
+}
+.aside {
+  flex: 1 0 0;
+}

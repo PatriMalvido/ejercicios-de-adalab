@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 300px;
+  background-color: blueviolet;
+  z-index: 99;
+}
+.text {
+  position: absolute;
+  top: 300px;
+}

@@ -1,0 +1,8 @@
+.container {
+  width: 86%;
+  max-width: 600px;
+  background-color: blueviolet;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}

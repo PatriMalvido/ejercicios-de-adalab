@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  position: fixed;
+  background-color: lavender;
+  width: 100%;
+}
+.menu {
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+
+p {
+  padding-bottom: 40px; /*para que tenga espacios entre parrafos*/
+}
+.item {
+  display: inline-block;
+}
+.cookies {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: honeydew;
+}
+.flotante {
+  background-color: hotpink; /*para ver bien lo que ocupan es bueno poner colores*/
+  transform: scale(0.3) translate(99%, 0px);
+}
