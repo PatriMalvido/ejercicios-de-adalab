@@ -1,0 +1,20 @@
+html {
+  font-size: 3rem; /*para que mida 200x200 sería 
+  font-size: 12rem*/
+}
+.smiley {
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  text-align: center;
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 3rem;
+  color: #424242;
+  background: #ffcc00;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
