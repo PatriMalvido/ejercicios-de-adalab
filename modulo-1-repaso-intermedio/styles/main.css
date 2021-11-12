@@ -1,24 +1,41 @@
+:root {
+  --colorPpal: #cc212a;
+}
 .maintext {
-  color: #cc212a;
+  height: 100vh;
+  color: var(--colorPpal);
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: cyan;
-  height: 80vh;
 }
 .footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  height: 20vh;
   border-top: solid #cc212a 0.18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.color {
-  background-color: darkgoldenrod;
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--colorPpal);
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  transform: translateY(-50%);
 }
-.textcolor {
-  background-color: darkgoldenrod;
+@media all and (min-width: 768px) {
+  .footer {
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  .icon {
+    transform: none;
+  }
 }
