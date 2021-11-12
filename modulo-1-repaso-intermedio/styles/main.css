@@ -1,0 +1,24 @@
+.maintext {
+  color: #cc212a;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: cyan;
+  height: 80vh;
+}
+.footer {
+  width: 100%;
+  height: 20vh;
+  border-top: solid #cc212a 0.18rem;
+}
+.color {
+  background-color: darkgoldenrod;
+}
+.textcolor {
+  background-color: darkgoldenrod;
+}
