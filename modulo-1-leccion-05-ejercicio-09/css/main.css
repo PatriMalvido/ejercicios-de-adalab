@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border: 8px solid black;
+}
+.article-container {
+  margin: 106px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+.article-autor {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.article-title {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+.text {
+  font-size: 18px;
+  margin-bottom: 27px;
+}
+.info {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-left: -16px;
+}
