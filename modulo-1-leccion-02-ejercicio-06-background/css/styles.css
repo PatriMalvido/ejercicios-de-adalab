@@ -1,0 +1,31 @@
+body {
+  margin: 10px 30px;
+}
+.col {
+  display: inline-block;
+  width: 140px;
+  margin-right: 10px;
+}
+h2 {
+  font-size: 18px;
+}
+.box {
+  border: 1px solid pink;
+  width: 150px;
+  height: 150px;
+}
+.box--1 {
+  background-color: cyan;
+}
+.box--2 {
+  background-image: url(https://www.fillmurray.com/150/150);
+}
+.box--3 {
+  /*Modo sin abreviar--------  
+  background-image: url(https://www.fillmurray.com/110/110);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: cyan;*/
+
+  background: url("https://www.fillmurray.com/110/110") center no-repeat cyan;
+}
