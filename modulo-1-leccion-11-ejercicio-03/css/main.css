@@ -1,0 +1,20 @@
+body{margin:0;}
+.wrapper{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.item{
+  background: deeppink;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item1 {
+    height: 20%;
+    grid-column: span 12;
+}
