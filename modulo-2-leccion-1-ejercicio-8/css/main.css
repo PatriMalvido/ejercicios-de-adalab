@@ -1,0 +1,25 @@
+* {
+    margin: 20px;
+}
+
+.buttonOne {
+    width: 70px;
+    padding: 20px 10px 20px 10px;
+    background-color: orangered;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.buttonTwo {
+    width: 70px;
+    padding: 20px 10px 20px 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.opacity {
+    opacity: 30%;
+}
