@@ -1,0 +1,17 @@
+'use strict';
+const firstDogImage = 'https://images.dog.ceo/breeds/schipperke/n02104365_8156.jpg';
+const firstDogName = 'Dina';
+
+const secondDogImage = 'https://images.dog.ceo/breeds/collie-border/n02106166_355.jpg';
+const secondDogName = 'Luna';
+
+const thirdDogImage = 'https://images.dog.ceo/breeds/affenpinscher/n02110627_7065.jpg';
+const thirdDogName = 'Lana';
+
+
+const ulElement = document.querySelector('.js-list');
+ulElement.innerHTML = `<li><img src= "${firstDogImage}" alt="${firstDogImage}"/></li>`;
+
+ulElement.innerHTML += `<li><img src= "${secondDogImage}" alt="${secondDogImage}"/></li>`;
+
+ulElement.innerHTML += `<li><img src= "${thirdDogImage}" alt="${thirdDogImage}"/></li>`;
