@@ -9,3 +9,4 @@ adalaber1.runMarathon = distance => `un maraton de ${distance} kilometros`;
 
 console.log(adalaber1.run);
 console.log(adalaber1.runMarathon('50'));
+
