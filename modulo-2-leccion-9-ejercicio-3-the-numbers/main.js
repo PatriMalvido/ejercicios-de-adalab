@@ -31,6 +31,6 @@ function bestLostNumberTwo(numbers) {
 }
 console.log(bestLostNumberTwo(lostNumbers));
 
-
 //Ejercicio 3.3
-console.log(bestLostNumber(lostNumbers) + bestLostNumberTwo(lostNumbers));
+
+console.log(bestLostNumber(lostNumbers).concat(bestLostNumberTwo(lostNumbers)));
