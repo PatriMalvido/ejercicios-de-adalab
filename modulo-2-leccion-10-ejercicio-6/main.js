@@ -19,15 +19,15 @@ function getRandomDog() {
                 .then(numberData => {
                     const randomNumber = numberData.result;
                     const dogBreed = breeds[randomNumber];
-                    console.log(dogBreed);
+                    
+                //console.log(dogBreed);
 
                     //proxima petición //pintar la imagen de esa raza aleatoria
                     return fetch (`https://dog.ceo/api/breed/${dogBreed}/images/random`)
                     .then(imageResponse => imageResponse.json())
                     .then(imageData => {
-                        console.log(imageData);
-                        imageData = image.src;
-                        image.src= `https://dog.ceo/api/breed/${dogBreed}/images/random`;
+                        //console.log(imageData);
+                        image.src= imageData.message;
                         
                     })
                 })
