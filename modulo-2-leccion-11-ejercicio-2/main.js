@@ -8,7 +8,7 @@ const searchInput = document.querySelector ('.js_searchInput');
 const buttonSearch = document.querySelector('.js_button');
 
 
-//Funcion: tengo que recoger el input de lo que escribe el usuario, creo una variable para recoger esos datos, y luego los muestro 
+//Funcion: tengo que recoger el input de lo que escribe el usuario, creo una variable para recoger esos datos, y luego los muestro recorriendo el array
 function handleGetCharacter() {
     fetch(`https://swapi.py4e.com/api/people/?search=${searchInput.value}`)
     .then((response) => response.json())
