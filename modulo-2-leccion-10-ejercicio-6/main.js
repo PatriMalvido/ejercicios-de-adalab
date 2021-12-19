@@ -8,7 +8,7 @@ function getRandomDog() {
     fetch("https://dog.ceo/api/breeds/list")
         .then(response => response.json())
         .then(breedsData => {
-            //console.log(breedsData);
+            console.log(breedsData);
             const breeds = breedsData.message;
             //const breeds = Object.keys(breedsData.message);
             //console.log(breeds);
