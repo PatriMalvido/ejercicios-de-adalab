@@ -13,7 +13,7 @@ function handleGetCharacter() {
     fetch(`https://swapi.py4e.com/api/people/?search=${searchInput.value}`)
     .then((response) => response.json())
     .then((data) => {
-
+console.log(data);
         const characteres = data.results;
         list.innerHTML = '';
         for (let i = 0; i< characteres.length; i++){
