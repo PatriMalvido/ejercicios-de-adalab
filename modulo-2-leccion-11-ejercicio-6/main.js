@@ -4,7 +4,7 @@ const inputNameElement = document.querySelector('.js-inputname');
 const inputLastNameElement = document.querySelector('.js-inputlastname');
 const result = document.querySelector('.js-text');
 
-const dataInfoUser = {
+let dataInfoUser = {
     name:"",
     lastname:"",
 }
@@ -12,10 +12,11 @@ console.log(dataInfoUser);
 
 function handlerShowText(){
 const dataname =inputNameElement.value;
+textElement.textContent= dataname;
 dataInfoUser.name = dataname;
 
 
-console.log(dataname);
+
 
 }
 
