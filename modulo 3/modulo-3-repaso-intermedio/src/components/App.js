@@ -1,13 +1,84 @@
 import '../styles/App.scss';
+import { useEffect, useState } from 'react';
+import originalData from '../data/originalData.json';
 
 function App() {
+  const [data, setData] = useState(originalData); //esta variable de estado es para nuestra lista de contactos
+
+  const [filterContact, setFilterContact] = useState(''); // esta variable de estado es para el input de filtrar por nombre
+
+  const [newContact, setNewContact] = useState(''); //esta variable de estado es para los inputs de nuevo contacto
+
+  //------------------------------------------------------------------------
+  //FUNCION PARA RENDERIZAR LA LISTA DE CONTACTOS y filtrar por nombre
+  const renderContacts = () => {
+    return data
+      .filter((eachContact) => {
+        return eachContact.name
+          .toLocaleLowerCase()
+          .includes(filterContact.toLocaleLowerCase());
+      })
+      .map((eachContact, index) => {
+        return (
+          <li key={index} className="contact__item">
+            <p className="contact__name">
+              <label className="contact__label">Nombre:</label>
+              {eachContact.name}&nbsp;
+              {eachContact.lastname}
+            </p>
+            <p className="contact__phone">
+              <label className="contact__label">Teléfono:</label>
+              <a href="tel:603256289" title="Pulsa aquí para llamar a Lola">
+                {eachContact.phone}
+              </a>
+            </p>
+            <p className="contact__mail">
+              <label className="contact__label">Email:</label>
+              <a
+                href={eachContact.email}
+                title="Pulsa aquí para escribir a Lola"
+              >
+                {eachContact.email}
+              </a>
+            </p>
+          </li>
+        );
+      });
+  };
+  //-----------------------------------------------------------
+  //FUNCION PARA FILTRAR POR NOMBRE
+
+  const handleChangeFilter = (ev) => {
+    setFilterContact(ev.currentTarget.value);
+  };
+  //-------------------------------------------------------------
+  //FUNCION PARA INPUT DE NUEVO CONTACTO Y BOTON AÑADIR
+
+  const handleChangeContact = (ev) => {
+    setNewContact({
+      ...newContact,
+      [ev.currentTarget.id]: ev.currentTarget.value,
+    });
+  };
+
+  const handleClickAdd = () => {
+ 
+    setData([...data, newContact]);
+    setNewContact({});
+  };
+
+
+//------------------------------------------------------------------
+
   return (
     <div className="page">
       {/* header */}
       <header className="header">
         <h1 className="header__title">Mi agenda de contactos</h1>
-        <form>
+        <form onSubmit={(ev) => ev.preventDefault()}>
           <input
+            id="filterSearch"
+            onChange={handleChangeFilter}
             className="header__search"
             autoComplete="off"
             type="search"
@@ -19,81 +90,16 @@ function App() {
 
       <main>
         {/* contact list */}
-        <ul className="contact__list">
-          <li className="contact__item">
-            <p className="contact__name">
-              <label className="contact__label">Nombre:</label>Lola Martinez
-            </p>
-            <p className="contact__phone">
-              <label className="contact__label">Teléfono:</label>
-              <a href="tel:603256289" title="Pulsa aquí para llamar a Lola">
-                603256289
-              </a>
-            </p>
-            <p className="contact__mail">
-              <label className="contact__label">Email:</label>
-              <a href="mailto:lmartinez@adalab.es" title="Pulsa aquí para escribir a Lola">
-                lmartinez@adalab.es
-              </a>
-            </p>
-          </li>
-          <li className="contact__item">
-            <p className="contact__name">
-              <label className="contact__label">Nombre:</label>Martha Houston
-            </p>
-            <p className="contact__phone">
-              <label className="contact__label">Teléfono:</label>
-              <a href="tel:612435678" title="Pulsa aquí para llamar a Martha">
-                612435678
-              </a>
-            </p>
-            <p className="contact__mail">
-              <label className="contact__label">Email:</label>
-              <a href="mailto:mhouston@adalab.es" title="Pulsa aquí para escribir a Martha">
-                mhouston@adalab.es
-              </a>
-            </p>
-          </li>
-          <li className="contact__item">
-            <p className="contact__name">
-              <label className="contact__label">Nombre:</label>Lillie Moore
-            </p>
-            <p className="contact__phone">
-              <label className="contact__label">Teléfono:</label>
-              <a href="tel:632456789" title="Pulsa aquí para llamar a Lillie">
-                632456789
-              </a>
-            </p>
-            <p className="contact__mail">
-              <label className="contact__label">Email:</label>
-              <a href="mailto:lillie@adalab.es" title="Pulsa aquí para escribir a Lillie">
-                lillie@adalab.es
-              </a>
-            </p>
-          </li>
-          <li className="contact__item">
-            <p className="contact__name">
-              <label className="contact__label">Nombre:</label>Jane Norton
-            </p>
-            <p className="contact__phone">
-              <label className="contact__label">Teléfono:</label>
-              <a href="tel:603256679" title="Pulsa aquí para llamar a Jane">
-                603256679
-              </a>
-            </p>
-            <p className="contact__mail">
-              <label className="contact__label">Email:</label>
-              <a href="mailto:janenorton@adalab.es" title="Pulsa aquí para escribir a Jane">
-                janenorton@adalab.es
-              </a>
-            </p>
-          </li>
-        </ul>
+        <ul className="contact__list">{renderContacts()}</ul>
 
         {/* new contact */}
-        <form className="new-contact__form">
+        <form
+          onSubmit={(ev) => ev.preventDefault()}
+          className="new-contact__form"
+        >
           <h2 className="new-contact__title">Añade un nuevo contacto</h2>
           <input
+            onChange={handleChangeContact}
             className="new-contact__input"
             type="text"
             name="name"
@@ -101,6 +107,7 @@ function App() {
             placeholder="Nombre"
           />
           <input
+            onChange={handleChangeContact}
             className="new-contact__input"
             type="text"
             name="lastname"
@@ -108,6 +115,7 @@ function App() {
             placeholder="Apellidos"
           />
           <input
+            onChange={handleChangeContact}
             className="new-contact__input"
             type="phone"
             name="phone"
@@ -115,13 +123,19 @@ function App() {
             placeholder="Teléfono"
           />
           <input
+            onChange={handleChangeContact}
             className="new-contact__input"
             type="email"
             name="email"
             id="email"
             placeholder="Email"
           />
-          <input className="new-contact__btn" type="submit" value="Añadir" />
+          <input
+            onClick={handleClickAdd}
+            className="new-contact__btn"
+            type="submit"
+            value="Añadir"
+          />
         </form>
       </main>
     </div>
