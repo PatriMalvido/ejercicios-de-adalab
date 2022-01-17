@@ -28,14 +28,14 @@ function App() {
             </p>
             <p className="contact__phone">
               <label className="contact__label">Teléfono:</label>
-              <a href="tel:603256289" title="Pulsa aquí para llamar a Lola">
+              <a href={`tel:${eachContact.phone}`} title="Pulsa aquí para llamar a Lola">
                 {eachContact.phone}
               </a>
             </p>
             <p className="contact__mail">
               <label className="contact__label">Email:</label>
               <a
-                href={eachContact.email}
+                href={'mailto:' + eachContact.email}
                 title="Pulsa aquí para escribir a Lola"
               >
                 {eachContact.email}
