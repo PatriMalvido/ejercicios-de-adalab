@@ -1,4 +1,8 @@
-const renderPaymentTypeText = (props) => {
+
+
+const Preview = (props)=> {
+
+  const renderPaymentTypeText = () => {
     if (props.paymentType === 'creditCard') {
       return 'Tarjeta de crédito';
     } else if (props.paymentType === 'cash') {
@@ -8,8 +12,6 @@ const renderPaymentTypeText = (props) => {
     }
   };
 
-
-const Preview = (props)=> {
     return (
         
         <div className="preview">
@@ -18,7 +20,7 @@ const Preview = (props)=> {
             <li>Nombre: {props.name}</li>
             <li>Email: {props.email}</li>
             <li>Región: {props.region}</li>
-            <li>Método de pago:{props.paymentType} </li>
+            <li>Método de pago:{renderPaymentTypeText()} </li>
             <li>Has aceptado nuestros términos legales: {props.legalTerms === true ? 'Sí' : 'No'}</li>
           </ul>
         </div>
