@@ -1,13 +1,19 @@
 //RECORDATORIO: los inputs siempre tienen que estar contralados por onChange y value
-
+import localStorage from '../services/localstorage';
 import '../styles/App.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import originalData from '../data/tasks.json';
 
 function App() {
   const [filterTask, setFilterTask] = useState(''); //esta variable de estado se crea para el input de filtrado
   const [newTask, setNewTask] = useState(''); // esta variable de estado se crea para ir añadiendo las nuevas tareas del input
-  const [data, setData] = useState(originalData); //esta variable es para nuestra lista de tareas
+  const [data, setData] = useState(localStorage.get('data', originalData)); //esta variable es para nuestra lista de tareas
+
+  useEffect(() => {
+    
+    localStorage.set('data', originalData);
+  }, [data]);
+
 
   // RENDERIZAR TITULO Y LISTA DE TAREAS----------------------------------------
 
@@ -15,7 +21,6 @@ function App() {
   const renderTitle = (text) => <h1>{text}</h1>;
 
   const renderTasks = () => {
-    console.log(filterTask);
     return data
       .filter((eachTask) => {
         return eachTask.task

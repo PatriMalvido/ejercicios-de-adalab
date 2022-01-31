@@ -15,8 +15,8 @@ function App() {
     return data
       .filter((eachContact) => {
         return eachContact.name
-          .toLowerCase()
-          .includes(filterContact.toLowerCase());
+          .toLocaleLowerCase()
+          .includes(filterContact.toLocaleLowerCase());
       })
       .map((eachContact, index) => {
         return (

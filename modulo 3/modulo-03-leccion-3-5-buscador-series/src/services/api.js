@@ -3,7 +3,7 @@ const callToApi = (searchName) => {
   // Llamamos al fetch interpolando la URL del API más el nombre buscado
   return fetch(`https://api.tvmaze.com/search/shows?q=${searchName}`)
     .then(response => response.json())
-    .then(response => {
+    .then(response => { console.log(response);
       // La respuesta del API es un objeto que dentro tiene la propiedad results que es un array
       // Recorremos el array results obteniendo solo el nombre
       // Esto lo hacemos para limpiar la respuesta del API antes de devolverla al componente App
