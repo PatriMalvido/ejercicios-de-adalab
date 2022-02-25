@@ -15,3 +15,4 @@ ulElement.innerHTML = `<li><img src= "${firstDogImage}" alt="${firstDogImage}"/>
 ulElement.innerHTML += `<li><img src= "${secondDogImage}" alt="${secondDogImage}"/></li>`;
 
 ulElement.innerHTML += `<li><img src= "${thirdDogImage}" alt="${thirdDogImage}"/></li>`;
+
