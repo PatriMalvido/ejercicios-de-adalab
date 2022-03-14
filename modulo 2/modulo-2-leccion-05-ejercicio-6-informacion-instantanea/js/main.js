@@ -1,7 +1,7 @@
 'use strict';
 
 const letters = document.querySelector ('.js-text');
-const input = document.querySelector ('js-input');
+const input = document.querySelector ('.js-input');
 
 
 const presKey = (event) => {
@@ -11,5 +11,5 @@ const presKey = (event) => {
 
 
 
-input.addEventListener('keyup', preskey);
+input.addEventListener('keyup', presKey);
 
